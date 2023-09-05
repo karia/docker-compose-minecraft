@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    container_name: minecraft-charlotte-stg
+    ports:
+      - 48610:48600
+    environment:
+      EULA: "TRUE"
+      MEMORY: "8G"
+      VERSION: "1.20.1"
+      TYPE: "SPIGOT"
+      MODS: "https://mediafilez.forgecdn.net/files/4586/220/worldedit-bukkit-7.2.15.jar"
+      STOP_SERVER_ANNOUNCE_DELAY: 10
+      RCON_PASSWORD: "charlotte486486"
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - /home/karia/minecraft/staging/data:/data
+

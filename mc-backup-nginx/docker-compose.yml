@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  ng:
+    image: shimamura-nginx
+    container_name: yuno03-shimamura-nginx
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      - /home/karia/minecraft/production/backups:/backups:ro
+
